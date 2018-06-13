@@ -37,6 +37,13 @@ public class HangmanGraphical {
 		 int highscore = 0;
 	        // New BufferedReader.
 	        String documents = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
+	        File file3 = new File(documents + "/words.txt");
+		      //Create the file
+		        if (file3.createNewFile()){
+		        System.out.println("File is created. Please copy the words document contents from the Github to the words.txt");
+		        }else{
+		        System.out.println("Dictionary loaded.");
+		        }
 	        BufferedReader reader = new BufferedReader(new FileReader(documents + "/words.txt"));
 	        // Add all lines from file to ArrayList.
 	        while (true) {
@@ -77,9 +84,8 @@ public class HangmanGraphical {
 	        File file = new File(documents + "/hangmanhighscore.txt");
 	      //Create the file
 	        if (file.createNewFile()){
-	        System.out.println("File is created!");
+	        System.out.println("Highscore document created.");
 	        }else{
-	        System.out.println("File already exists.");
 	        }
 	         
 	        //Write Content
